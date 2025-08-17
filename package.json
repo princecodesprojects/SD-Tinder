@@ -2,7 +2,7 @@
   "name": "episod04",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
+  "type": "common",
   "scripts": {
     "dev": "nodemon src/app.js"
   },
