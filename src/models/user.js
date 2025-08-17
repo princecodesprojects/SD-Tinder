@@ -20,11 +20,17 @@ const userSchema = new mongoose.Schema(
       lowercase: true,
       trim: true,
       maxLength: 50,
-      validate(value) {
-        if (!validator.isEmail(value)) {
-          throw new Error("Email is not valid");
-        }
-      },
+      //   validate(value) {
+      //     if (!validator.isEmail(value)) {
+      //       throw new Error("Email is not valid");
+      //     }
+      //   },
+    },
+    phoneNumber: {
+      type: Number,
+      unique: true,
+      minLength: 10,
+      maxLength: 13,
     },
     password: {
       type: String,
@@ -39,11 +45,11 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
       maxLength: 20,
-      validate(value) {
-        if (!["male", "female"].includes(value)) {
-          throw new Error("Gender is not valid");
-        }
-      },
+      //   validate(value) {
+      //     if (!["male", "female"].includes(value)) {
+      //       throw new Error("Gender is not valid");
+      //     }
+      //   },
     },
     photoUrl: {
       type: String,
